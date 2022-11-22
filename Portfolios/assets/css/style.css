@@ -942,3 +942,73 @@ hr.rainbow3{
 	background-image: -ms-linear-gradient(left, rgba(255,2,5,.5), rgba(137,11,138,.5), rgba(27,123,187,.5), rgba(47,195,44,.5), rgba(253,201,1,.5), rgba(255,91,2,.5), #ccc 45%, #ccc 55%, rgba(255,91,2,.5), rgba(253,201,1,.5), rgba(47,195,44,.5), rgba(27,123,187,.5), rgba(137,11,138,.5), rgba(255,2,5,.5));
 	background-image: -o-linear-gradient(left, rgba(255,2,5,.5), rgba(137,11,138,.5), rgba(27,123,187,.5), rgba(47,195,44,.5), rgba(253,201,1,.5), rgba(255,91,2,.5), #ccc 45%, #ccc 55%, rgba(255,91,2,.5), rgba(253,201,1,.5), rgba(47,195,44,.5), rgba(27,123,187,.5), rgba(137,11,138,.5), rgba(255,2,5,.5));
 }
+
+.text-box{
+	font-size: 20px;
+	font-weight: 200;
+	text-align: center;
+	width:100%;
+}
+
+.fixed-text{
+	display: inline-block;
+}
+.animate-text{
+	display: inline-block;
+	vertical-align: top;
+	height: 30px;
+	overflow: hidden;
+}
+.animate-text div{
+	animation:9s wordChange;
+	animation-iteration-count: infinite;
+	animation-timing-function: steps(1);
+}
+.animate-text span{
+	position: relative;
+	color: #ffdd00;
+	display: block;
+	text-align: left;
+
+}
+.animate-text span:after{
+	content: "";
+	position: absolute;
+	left: 0;
+	border-left: 2px solid #ffdd00;
+	height: 100%;
+	animation:3s textType;
+	animation-iteration-count: infinite;
+	animation-timing-function: steps(25);
+	animation-fill-mode: backwards;
+	right: -2px;
+	background-color: #000000;
+	overflow: hidden;
+}
+
+@keyframes textType{
+	0%{
+		left: 0;
+	}
+	50%{
+		left: 100%;
+	}
+	100%{
+		left: 0;
+	}
+}
+@keyframes wordChange{
+	0%{
+		margin-top: 0;
+	}
+	33.333%{
+		margin-top: -30px;
+	}
+	66.666%{
+		margin-top: -60px;
+	}
+	100%{
+		margin-top: 0;
+	}
+}
+
